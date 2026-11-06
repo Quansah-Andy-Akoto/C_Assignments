@@ -1,0 +1,4 @@
+﻿  Num19.cpp
+C:\Users\Dell\source\repos\Assignment.eng\Num19.cpp(11,13): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Dell\source\repos\Assignment.eng\Num19.cpp(15,18): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+  Assignment.eng.vcxproj -> C:\Users\Dell\source\repos\Assignment.eng\x64\Debug\Assignment.eng.exe
