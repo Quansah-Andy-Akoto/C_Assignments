@@ -1,0 +1,49 @@
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+
+int main() {
+    const int DAYS_IN_MONTH = 31;
+    int julyTemps[DAYS_IN_MONTH];
+    int augustTemps[DAYS_IN_MONTH];
+
+    // Seed random number generator
+    srand(static_cast<unsigned int>(time(0)));
+
+    // Generate random temperatures for July (15–25 degrees)
+    for (int i = 0; i < DAYS_IN_MONTH; ++i) {
+        julyTemps[i] = 15 + rand() % 11; // 15 to 25
+    }
+
+    // Copy July temperatures to August
+    for (int i = 0; i < DAYS_IN_MONTH; ++i) {
+        augustTemps[i] = julyTemps[i];
+    }
+
+    // Print August temperatures
+    cout << "August temperatures (copied from July):" << endl;
+    for (int i = 0; i < DAYS_IN_MONTH; ++i) {
+        cout << "Day " << (i + 1) << ": " << augustTemps[i] << "°C" << endl;
+    }
+
+    // Compare July and August arrays
+    bool arraysEqual = true;
+    for (int i = 0; i < DAYS_IN_MONTH; ++i) {
+        if (julyTemps[i] != augustTemps[i]) {
+            arraysEqual = false;
+            break;
+        }
+    }
+
+    // Output result
+    cout << "\nComparison result: ";
+    if (arraysEqual) {
+        cout << "The July and August temperature arrays are equal." << endl;
+    }
+    else {
+        cout << "The July and August temperature arrays are NOT equal." << endl;
+    }
+
+    return 0;
+}
